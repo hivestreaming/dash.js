@@ -1,6 +1,6 @@
 {
-  "name": "dashjs",
-  "version": "1.4.0",
+  "name": "@hivestreaming/dashjs",
+  "version": "1.4.0-build.1",
   "description": "A reference client implementation for the playback of MPEG DASH via Javascript and compliant browsers.",
   "main": "dist/dash.all.js",
   "scripts": {
