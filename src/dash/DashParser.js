@@ -31,7 +31,7 @@
 
 var ObjectIron = require('../lib/objectiron')
 var X2JS = require('../lib/xml2json')
-DashParser = function () {
+var DashParser = function DashParser() {
 
     var SECONDS_IN_YEAR = 365 * 24 * 60 * 60,
         SECONDS_IN_MONTH = 30 * 24 * 60 * 60, // not precise!
@@ -402,7 +402,10 @@ DashParser = function () {
         parse: internalParse
     };
 };
-//
+
 //Dash.dependencies.DashParser.prototype = {
 //    constructor: Dash.dependencies.DashParser
 //};
+
+if(typeof exports !== 'undefined')
+    module.exports = DashParser;
