@@ -45,8 +45,7 @@
  *
  */
 
-function ObjectIron(map) {
-
+var ObjectIron = function ObjectIron(map) {
     var lookup;
 
     // create a list of top level items to search for
@@ -210,3 +209,6 @@ function ObjectIron(map) {
         run: performMapping
     };
 }
+
+if(typeof exports !== 'undefined')
+    module.exports = ObjectIron;

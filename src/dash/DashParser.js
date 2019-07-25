@@ -28,8 +28,10 @@
  *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *  POSSIBILITY OF SUCH DAMAGE.
  */
-Dash.dependencies.DashParser = function () {
-    "use strict";
+
+var ObjectIron = require('../lib/objectiron')
+var X2JS = require('../lib/xml2json')
+DashParser = function () {
 
     var SECONDS_IN_YEAR = 365 * 24 * 60 * 60,
         SECONDS_IN_MONTH = 30 * 24 * 60 * 60, // not precise!
@@ -346,7 +348,7 @@ Dash.dependencies.DashParser = function () {
         },
 
         internalParse = function (data, baseUrl) {
-            //this.log("Doing parse.");
+            // console.log("Doing parse.");
 
             var manifest,
                 converter = new X2JS(matchers, '', true),
@@ -382,25 +384,25 @@ Dash.dependencies.DashParser = function () {
                 iron.run(manifest);
                 ironed = new Date();
 
-                this.xlinkController.setMatchers(matchers);
-                this.xlinkController.setIron(iron);
+                //this.xlinkController.setMatchers(matchers);
+                //this.xlinkController.setIron(iron);
 
-                this.log("Parsing complete: ( xml2json: " + (json.getTime() - start.getTime()) + "ms, objectiron: " + (ironed.getTime() - json.getTime()) + "ms, total: " + ((ironed.getTime() - start.getTime()) / 1000) + "s)");
+                // console.log("Parsing complete: ( xml2json: " + (json.getTime() - start.getTime()) + "ms, objectiron: " + (ironed.getTime() - json.getTime()) + "ms, total: " + ((ironed.getTime() - start.getTime()) / 1000) + "s)");
             } catch (err) {
-                this.errHandler.manifestError("parsing the manifest failed", "parse", data);
+                console.log("parsing the manifest failed", "parse", data);
                 return null;
             }
             return manifest;
         };
 
     return {
-        log: undefined,
-        errHandler: undefined,
-        xlinkController: undefined,
+        //log: undefined,
+        //errHandler: undefined,
+        //xlinkController: undefined,
         parse: internalParse
     };
 };
-
-Dash.dependencies.DashParser.prototype = {
-    constructor: Dash.dependencies.DashParser
-};
+//
+//Dash.dependencies.DashParser.prototype = {
+//    constructor: Dash.dependencies.DashParser
+//};
