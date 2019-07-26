@@ -132,7 +132,7 @@ var X2JS = function X2JS(matchers, attrPrefix, ignoreRoot) {
 				    } catch (error) {
 				        matchobj.test.call(this, attr);
 				        console.error(error);
-						}
+				    }
 				}
 				
 				result[attrPrefix+attr.name]=value2;
