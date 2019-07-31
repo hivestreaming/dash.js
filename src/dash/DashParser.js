@@ -408,4 +408,4 @@ var DashParser = function DashParser() {
 //};
 
 if(typeof exports !== 'undefined')
-    module.exports = DashParser;
+    module.exports = { DashParser };
