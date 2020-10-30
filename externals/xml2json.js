@@ -277,10 +277,12 @@ function X2JS(config) {
                 result.__cnt++;
 
                 var value2 = attr.value;
-                for(var m=0, ml=config.matchers.length; m < ml; m++) {
-                    var matchobj = config.matchers[m];
-                    if (matchobj.test(attr, nodeLocalName))
-                        value2 = matchobj.converter(attr.value);
+                if (Array.isArray(config.matchers)) {
+                    for(var m=0, ml=config.matchers.length; m < ml; m++) {
+                        var matchobj = config.matchers[m];
+                        if (matchobj.test(attr, nodeLocalName))
+                            value2 = matchobj.converter(attr.value);
+                    }
                 }
 
                 result[config.attributePrefix+attr.name]=value2;
