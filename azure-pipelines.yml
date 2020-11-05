@@ -27,13 +27,6 @@ steps:
     contents: 'xml2json.d.ts'
     targetFolder: build/es5/externals
 
-- task: DeleteFiles@1
-  displayName: 'Clean package'
-  inputs:
-    Contents: |
-      build/!(es5)
-      !(package.json) 
-
 - task: Npm@1
   displayName: 'NPM Publish'
   inputs:
