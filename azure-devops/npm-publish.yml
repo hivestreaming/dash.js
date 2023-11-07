@@ -36,4 +36,4 @@ extends:
     prePublish:
     - template: templates/install.yml
     - template: templates/build.yml
-    - template: templates/copy-files.yml
+    # - template: templates/copy-files.yml
