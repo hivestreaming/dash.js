@@ -1,7 +1,7 @@
 parameters:
   - name: packageJsonPath
     type: string
-    default: $(Build.SourcesDirectory)/package.json
+    default: package.json
 
 steps:
   - script: |
