@@ -34,6 +34,7 @@ extends:
     projectName: dash.js
     workingDirectory: .
     prePublish:
+    - template: templates/update-name.yml
     - template: templates/install.yml
     - template: templates/build.yml
     # - template: templates/copy-files.yml
