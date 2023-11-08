@@ -22,7 +22,7 @@ resources:
     - repository: pipelines
       type: github
       name: hivestreaming/azure-ci
-      ref: refs/heads/PENG-2692_update-azure-pipelines
+      # ref: refs/heads/EE-1_my-awesome-feature # pin to a specific branch during development
       endpoint: hivestreaming  # Azure DevOps service connection.
 
 extends:
