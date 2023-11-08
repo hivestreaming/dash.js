@@ -31,7 +31,6 @@ extends:
     versionBump: ${{ parameters.versionBump }}
     isSnapshot: ${{ parameters.isSnapshot }}
     useExistingTag: false
-    projectName: dash.js
     workingDirectory: .
     prePublish:
     - template: templates/install.yml
