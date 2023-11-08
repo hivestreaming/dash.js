@@ -1,3 +1,5 @@
 steps:
+  - script: chown -R $(whoami) dist
+    displayName: Fix permissions on dist
   - script: npm run build
     displayName: Build
